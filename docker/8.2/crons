@@ -1,0 +1,1 @@
+* * * * * sail /usr/bin/php -d variables_order=EGPCS /var/www/html/artisan schedule:run >> /var/www/html/storage/logs/scheduler.log
