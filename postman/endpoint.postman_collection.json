@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "7bf60166-1879-4433-a8a4-c64d95751588",
+		"name": "ideaOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12531224"
+	},
+	"item": [
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/basket/add",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"basket",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 1,\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 09:34:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 15,\n        \"customer_id\": 1,\n        \"status\": 0,\n        \"campaign_id\": null,\n        \"campaing\": null,\n        \"total\": 741.71,\n        \"items\": [\n            {\n                \"product_id\": 1,\n                \"category_id\": 10,\n                \"order_id\": 15,\n                \"quantity\": 1,\n                \"unit_price\": 741.71,\n                \"discount\": 0,\n                \"total_price\": 741.71\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Stock Not Availabilty",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2,\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 09:52:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"error\": {\n        \"code\": 0,\n        \"message\": \"stock not availability\"\n    },\n    \"data\": null\n}"
+				},
+				{
+					"name": "Product Not Exist",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1000,\n    \"quantity\": 2,\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 09:53:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 302,\n    \"error\": {\n        \"code\": 0,\n        \"message\": \"THE SELECTED PRODUCT IS EITHER INACTIVE OR DOES NOT EXIST.\"\n    },\n    \"data\": null\n}"
+				},
+				{
+					"name": "Assign Campaign 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 2,\n    \"quantity\": 1,\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 09:59:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 15,\n        \"customer_id\": 1,\n        \"status\": 0,\n        \"campaign_id\": 1,\n        \"campaing\": {\n            \"id\": 1,\n            \"discount\": 133.76,\n            \"total\": 1203.8,\n            \"title\": \"Sepette %10 indirim\"\n        },\n        \"total\": 1337.56,\n        \"items\": [\n            {\n                \"product_id\": 1,\n                \"category_id\": 10,\n                \"order_id\": 15,\n                \"quantity\": 1,\n                \"unit_price\": 741.71,\n                \"discount\": 0,\n                \"total_price\": 741.71\n            },\n            {\n                \"product_id\": 2,\n                \"category_id\": 5,\n                \"order_id\": 15,\n                \"quantity\": 1,\n                \"unit_price\": 595.85,\n                \"discount\": 0,\n                \"total_price\": 595.85\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Assign Campaign 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 18,\n    \"quantity\": 3,\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 10:10:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 16,\n        \"customer_id\": 1,\n        \"status\": 0,\n        \"campaign_id\": 2,\n        \"campaing\": {\n            \"id\": 2,\n            \"discount\": 74.82,\n            \"total\": 448.92,\n            \"title\": \"2 ID'li kategoriden Aynı üründen 6 adet satın alana birtanesi ücretsiz.\"\n        },\n        \"total\": 523.74,\n        \"items\": [\n            {\n                \"product_id\": 18,\n                \"category_id\": 2,\n                \"order_id\": 16,\n                \"quantity\": 7,\n                \"unit_price\": 74.82,\n                \"discount\": 74.82,\n                \"total_price\": 523.74\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Assign Campaign 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 80,\n    \"quantity\": 1,\n    \"customer_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 10:16:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 14,\n        \"customer_id\": 2,\n        \"status\": 0,\n        \"campaign_id\": 3,\n        \"campaing\": {\n            \"id\": 3,\n            \"discount\": 5.722,\n            \"total\": 324.228,\n            \"title\": \"4 ID'li kategoriden iki veya daha fazla ürün var ise, en ucuz üründe %20 indirim.\"\n        },\n        \"total\": 329.95,\n        \"items\": [\n            {\n                \"product_id\": 82,\n                \"category_id\": 4,\n                \"order_id\": 14,\n                \"quantity\": 3,\n                \"unit_price\": 72.89,\n                \"discount\": 0,\n                \"total_price\": 218.67\n            },\n            {\n                \"product_id\": 13,\n                \"category_id\": 4,\n                \"order_id\": 14,\n                \"quantity\": 2,\n                \"unit_price\": 28.61,\n                \"discount\": 5.722,\n                \"total_price\": 57.22\n            },\n            {\n                \"product_id\": 80,\n                \"category_id\": 4,\n                \"order_id\": 14,\n                \"quantity\": 1,\n                \"unit_price\": 54.06,\n                \"discount\": 0,\n                \"total_price\": 54.06\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/basket/preview",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"basket",
+						"preview"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/preview",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"preview"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 09:26:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 14,\n        \"customer_id\": 2,\n        \"status\": 0,\n        \"campaign_id\": 3,\n        \"campaing\": {\n            \"id\": 3,\n            \"discount\": 5.722,\n            \"total\": 270.168,\n            \"title\": \"4 ID'li kategoriden iki veya daha fazla ürün var ise, en ucuz üründe %20 indirim.\"\n        },\n        \"total\": 275.89,\n        \"items\": [\n            {\n                \"product_id\": 82,\n                \"category_id\": 4,\n                \"order_id\": 14,\n                \"quantity\": 3,\n                \"unit_price\": 72.89,\n                \"discount\": 0,\n                \"total_price\": 218.67\n            },\n            {\n                \"product_id\": 13,\n                \"category_id\": 4,\n                \"order_id\": 14,\n                \"quantity\": 2,\n                \"unit_price\": 28.61,\n                \"discount\": 5.722,\n                \"total_price\": 57.22\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Campaign Order Basket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"campaign_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/basket/campaign/15",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"basket",
+						"campaign",
+						"15"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"campaign_id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/campaign/15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"campaign",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 10:02:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": {\n        \"id\": 15,\n        \"customer_id\": 1,\n        \"status\": 0,\n        \"campaign_id\": 1,\n        \"campaing\": {\n            \"id\": 1,\n            \"discount\": 133.76,\n            \"total\": 1203.8,\n            \"title\": \"Sepette %10 indirim\"\n        },\n        \"total\": 1337.56,\n        \"items\": [\n            {\n                \"product_id\": 1,\n                \"category_id\": 10,\n                \"order_id\": 15,\n                \"quantity\": 1,\n                \"unit_price\": 741.71,\n                \"discount\": 0,\n                \"total_price\": 741.71\n            },\n            {\n                \"product_id\": 2,\n                \"category_id\": 5,\n                \"order_id\": 15,\n                \"quantity\": 1,\n                \"unit_price\": 595.85,\n                \"discount\": 0,\n                \"total_price\": 595.85\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel Order Basket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/basket/15",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"basket",
+						"15"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basket/15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basket",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:443"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 05 Apr 2025 10:05:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"error\": null,\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
